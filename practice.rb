@@ -52,8 +52,27 @@
 # Input: [4, 2, 5, 99, -4]
 # Output: [8, 4, 10, 198, -8]
 
-def double(numbers)
-  numbers.map{|n| n * 2}
+# def double(numbers)
+#   numbers.map{|n| n * 2}
+# end
+
+# p double([4, 2, 5, 99, -4])
+
+# Max ***************
+
+# Write a function that returns the greatest value from an array of numbers.
+
+# Input: [5, 17, -4, 20, 12]
+# Output: 20
+
+def max(numbers)
+  max = numbers[0]
+  numbers.each do |number|
+    if number > max
+      max = number
+    end
+  end
+  max
 end
 
-p double([4, 2, 5, 99, -4])
+p max([5, 17, -4, 20, 12])

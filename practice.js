@@ -49,8 +49,32 @@
 // # Input: [4, 2, 5, 99, -4]
 // # Output: [8, 4, 10, 198, -8]
 
-function double(numbers) {
-  return numbers.map(number => number = number * 2);
+// function double(numbers) {
+//   return numbers.map(number => number = number * 2);
+// }
+
+// console.log(double([4, 2, 5, 99, -4]));
+
+
+// Max ************************
+
+// Write a function that returns the greatest value from an array of numbers.
+
+// Input: [5, 17, -4, 20, 12]
+// Output: 20
+
+function max(numbers) {
+  let max = numbers[0];
+  let index = 0;
+  while (index < numbers.length) {
+    if (numbers[index] > max) {
+      max = numbers[index];
+      index = index + 1;
+    } else {
+      index = index + 1;
+    }
+  }
+  return max;
 }
 
-console.log(double([4, 2, 5, 99, -4]));
+console.log(max([5, 17, -4, 20, 12]));
