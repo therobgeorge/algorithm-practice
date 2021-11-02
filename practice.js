@@ -25,18 +25,32 @@
 // # Input: [99, 101, 88, 4, 2000, 50]
 // # Output: [99, 88, 4, 50]
 
-function lessThan(numbers) {
-  let less = [];
-  let index = 0;
-  while (index < numbers.length) {
-    if (numbers[index] < 100) {
-      less.push(numbers[index]);
-      index = index + 1;
-    } else {
-      index = index + 1; 
-    }
-  }
-  return less;
+// function lessThan(numbers) {
+//   let less = [];
+//   let index = 0;
+//   while (index < numbers.length) {
+//     if (numbers[index] < 100) {
+//       less.push(numbers[index]);
+//       index = index + 1;
+//     } else {
+//       index = index + 1; 
+//     }
+//   }
+//   return less;
+// }
+
+// console.log(lessThan([99, 101, 88, 4, 2000, 50]));
+
+// # Double **************
+
+
+// # Given an array of numbers, write a function that returns a new array whose values are the original array’s value doubled.
+
+// # Input: [4, 2, 5, 99, -4]
+// # Output: [8, 4, 10, 198, -8]
+
+function double(numbers) {
+  return numbers.map(number => number = number * 2);
 }
 
-console.log(lessThan([99, 101, 88, 4, 2000, 50]));
+console.log(double([4, 2, 5, 99, -4]));
