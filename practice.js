@@ -101,3 +101,23 @@
 // }
 
 // console.log(product([1, 2, 3, 4]));
+
+
+// reverse *****************
+
+// Given an array, write a function that returns an array that contains the original array’s values in reverse.
+
+// Input: [1, 2, 3, 4, 5]
+// Output: [5, 4, 3, 2, 1]
+
+// function reverse(numbers) {
+//   let reversed = [];
+//   let index = numbers.length - 1;
+//   while (index >= 0) {
+//     reversed.push(numbers[index]);
+//     index = index - 1;
+//   }
+//   return reversed;
+// }
+
+// console.log(reverse([1, 2, 3, 4]));
