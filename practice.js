@@ -145,3 +145,23 @@
 // }
 
 // console.log(skipped([2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2]));
+
+
+// reverse string *************
+
+// Write a function that returns the reverse of a given string.
+
+// Input: “abcde”
+// Output: “edcba”
+
+// function reverse(string) {
+//   let reversed = "";
+//   let index = string.length - 1;
+//   while (index >= 0) {
+//     reversed = reversed + string[index];
+//     index = index - 1;
+//   }
+//   return reversed;
+// }
+
+// console.log(reverse("abcde"));

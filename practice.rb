@@ -132,15 +132,34 @@
 # Output:
 # [2, 3, 1, 2, 2, 1, 5, 2, 2]
 
-def skip(numbers)
-  skipped = []
-  index = 0
-  while index < numbers.length
-    skipped << numbers[index]
-    index = index + numbers[index]
-  end
-  skipped
-end
+# def skip(numbers)
+#   skipped = []
+#   index = 0
+#   while index < numbers.length
+#     skipped << numbers[index]
+#     index = index + numbers[index]
+#   end
+#   skipped
+# end
 
 
-p skip([2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2])
+# p skip([2, 1, 3, 2, 5, 1, 2, 6, 2, 7, 1, 5, 6, 3, 2, 6, 2, 1, 2])
+
+# reverse string ********************
+
+# Write a function that returns the reverse of a given string.
+
+# Input: “abcde”
+# Output: “edcba”
+
+# def reverse(string)
+#   reversed = ""
+#   index = string.length - 1
+#   while index >= 0
+#     reversed = reversed + string[index]
+#     index = index - 1
+#   end
+#   reversed
+# end
+
+# p reverse("abcde")
