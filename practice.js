@@ -63,18 +63,41 @@
 // Input: [5, 17, -4, 20, 12]
 // Output: 20
 
-function max(numbers) {
-  let max = numbers[0];
-  let index = 0;
-  while (index < numbers.length) {
-    if (numbers[index] > max) {
-      max = numbers[index];
-      index = index + 1;
-    } else {
-      index = index + 1;
-    }
-  }
-  return max;
-}
+// function max(numbers) {
+//   let max = numbers[0];
+//   let index = 0;
+//   while (index < numbers.length) {
+//     if (numbers[index] > max) {
+//       max = numbers[index];
+//       index = index + 1;
+//     } else {
+//       index = index + 1;
+//     }
+//   }
+//   return max;
+// }
 
-console.log(max([5, 17, -4, 20, 12]));
+// console.log(max([5, 17, -4, 20, 12]));
+
+
+
+// product ***********************
+
+// Write a function that accepts an array of numbers and returns the product of all the numbers.
+
+// Input: [1, 2, 3, 4]
+// Output: 24
+
+// Explanation: (1 x 2 x 3 x 4) = 24
+
+// function product(numbers) {
+//   let product = numbers[0];
+//   let index = 1;
+//   while (index < numbers.length) {
+//     product = product * numbers[index];
+//     index += 1;
+//   }
+//   return product;
+// }
+
+// console.log(product([1, 2, 3, 4]));
