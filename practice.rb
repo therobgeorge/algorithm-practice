@@ -187,3 +187,32 @@
 
 # p dollar("i hate $ but i love money i know i know im crazy")
 # p dollar("abcdefghijklmnopqrstuvwxyz")
+
+#  Alternate caps ******************
+
+# Given a string, write a function that returns a copy of the original string that has every other character capitalized. (Capitalization should begin with the second character.)
+
+#   Input: “hello, how are your porcupines today?”
+#   Output: “hElLo, HoW ArE YoUr pOrCuPiNeS ToDaY?”
+
+
+# def spongebob(string)
+#   index = 0
+#   if string[0].match(/[A-Za-z]/)
+#     index = 1
+#   end
+
+#   while index < string.length
+#     if string[index].match?(/[A-Za-z]/)
+#       string[index] = string[index].upcase
+#       index += 2
+#     else
+#       index +=1
+#     end
+#   end
+#   string
+ 
+
+# end
+
+# p spongebob("hello, how are your porcupines today?")

@@ -191,3 +191,31 @@
 
 // console.log(dollar("i hate $ but i love money i know i know im crazy"));
 // console.log(dollar("abcdefghijklmnopqrstuvwxyz"));
+
+// #  Alternate caps ******************
+
+// # Given a string, write a function that returns a copy of the original string that has every other character capitalized. (Capitalization should begin with the second character.)
+
+// #   Input: “hello, how are your porcupines today?”
+// #   Output: “hElLo, HoW ArE YoUr pOrCuPiNeS ToDaY?”
+
+
+// function spongebob(string) {
+//   let split = string.split("");
+//   let index = 0;
+//   if (split[0].match(/[A-Za-z]/)) {
+//     index = 1;
+//   }
+//   while (index < split.length) {
+//     if (split[index].match(/[A-Za-z]/)) {
+//       split[index] = split[index].toUpperCase();
+//       index += 2;
+//     } else {
+//       index += 1;
+//     }
+//   }
+//   return split.join("");
+
+// }
+
+// console.log(spongebob("hello, how are your porcupines today?"));
