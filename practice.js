@@ -242,3 +242,32 @@
 // }
 
 // console.log(duplicate("abcdefghhijkkloooop"));
+
+// palindrome *********************
+
+// Given a string, write a function that returns true if it is a palindrome, and false if it is not. (A palindrome is a word that reads the same both forward and backward.)
+
+// Input: “racecar”
+// Output: true
+
+// Input: “baloney”
+// Output: false
+
+// function palindrome(string) {
+//   let split = string.split("");
+//   let reversed = [];
+//   let index = split.length - 1;
+//   while (index >= 0) {
+//     reversed.push(split[index]);
+//     index -= 1;
+//   }
+//   if (split.join("") === reversed.join("")) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+  
+// }
+
+// console.log(palindrome("racecar"));
+// console.log(palindrome("baloney"));

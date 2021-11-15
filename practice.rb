@@ -240,3 +240,33 @@
 # end
 
 # p duplicate("abcdefghhijkkloooop")
+
+
+
+# palandrome **************************
+
+# Given a string, write a function that returns true if it is a palindrome, and false if it is not. (A palindrome is a word that reads the same both forward and backward.)
+
+# Input: “racecar”
+# Output: true
+
+# Input: “baloney”
+# Output: false
+
+# def palindrome(string)
+#   split = string.chars
+#   reverse = []
+#   index = split.length - 1
+#   while index >= 0 
+#     reverse << split[index]
+#     index -= 1
+#   end
+#   if split == reverse 
+#     true
+#   else
+#     false
+#   end
+# end
+
+# p palindrome("racecar")
+# p palindrome("baloney")
