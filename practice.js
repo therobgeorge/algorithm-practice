@@ -344,3 +344,36 @@
 //  console.log(prime(4));
 //  console.log(prime(9));
 //  console.log(prime(13));
+
+
+
+// Fizzbuzz ********************
+
+// Write a function that prints out every number from 1 to N, with the following exceptions:
+
+// If the number is divisible by 3, print out "FIZZ".
+// If the number is divisible by 5, print out "BUZZ".
+// If the number is divisible by both 3 and 5, print out "FIZZBUZZ".
+
+// function fizzbuzz(number) {
+//   let buzzed = [];
+//   let index = 1;
+//   while (index <= number) {
+//     if (index % 3 === 0 && index % 5 === 0) {
+//       buzzed.push("FIZZBUZZ");
+//       index += 1;
+//     } else if (index % 5 === 0) {
+//       buzzed.push("BUZZ");
+//       index += 1;
+//     } else if (index % 3 === 0) {
+//       buzzed.push("FIZZ");
+//       index += 1;
+//     } else {
+//       buzzed.push(index);
+//       index += 1;
+//     }
+//   }
+//   return buzzed.join(" ");
+// }
+
+// console.log(fizzbuzz(100));
