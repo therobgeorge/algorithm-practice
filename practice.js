@@ -322,3 +322,25 @@
 // }
 
 // console.log(reverse("popcorn is so cool isn’t it yeah i thought so"))
+
+
+// Prime***********************
+
+// Write a function that returns whether a given number is a prime number.
+
+// function prime(number) {
+//   let divisor = 2;
+//   while (divisor < number) {
+//     if (number % divisor === 0) {
+//       return false;
+//     } else {
+//       divisor += 1;
+//     }
+//   }
+//   return true;
+// }
+
+//  console.log(prime(1));
+//  console.log(prime(4));
+//  console.log(prime(9));
+//  console.log(prime(13));

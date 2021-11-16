@@ -311,15 +311,38 @@
 # Input: “popcorn is so cool isn’t it yeah i thought so”
 # Output: “so thought i yeah it isn’t cool so is popcorn”
 
-def reverse(string)
-  split = string.split(" ")
-  index = split.length - 1
-  reversed = []
-  while index >= 0 
-    reversed << split[index]
-    index -= 1
-  end
-  reversed.join(" ")
-end
+# def reverse(string)
+#   split = string.split(" ")
+#   index = split.length - 1
+#   reversed = []
+#   while index >= 0 
+#     reversed << split[index]
+#     index -= 1
+#   end
+#   reversed.join(" ")
+# end
 
-p reverse("popcorn is so cool isn’t it yeah i thought so")
+# p reverse("popcorn is so cool isn’t it yeah i thought so")
+
+
+# Prime***********************
+
+# Write a function that returns whether a given number is a prime number.
+
+# def prime(number)
+#   divisor = 2
+#   # return number % divisor
+#   while divisor < number
+#     if number % divisor == 0
+#       return false
+#     else
+#       divisor += 1
+#     end
+#   end
+#   return true
+# end
+
+# p prime(1)
+# p prime(4)
+# p prime(9)
+# p prime(13)
