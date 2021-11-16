@@ -285,19 +285,40 @@
 // Input: "ABCDEFG", "ABCDEFG",
 // Output: 0
 
-function difference(string1, string2) {
-  let index = 0;
-  let count = 0;
-  while (index < string1.length) {
-    if (string1[index] !== string2[index]) {
-      count += 1;
-      index += 1;
-    } else {
-      index += 1;
-    }
-  }
-  return count;
-}
+// function difference(string1, string2) {
+//   let index = 0;
+//   let count = 0;
+//   while (index < string1.length) {
+//     if (string1[index] !== string2[index]) {
+//       count += 1;
+//       index += 1;
+//     } else {
+//       index += 1;
+//     }
+//   }
+//   return count;
+// }
 
-console.log(difference("ABCDEFG", "ABCXEOG"));
-console.log(difference("ABCDEFG", "ABCDEFG"));
+// console.log(difference("ABCDEFG", "ABCXEOG"));
+// console.log(difference("ABCDEFG", "ABCDEFG"));
+
+
+// Reverse Word *******************************
+
+// Given a string of words, write a function that returns a new string that contains the words in reverse order.
+
+// Input: “popcorn is so cool isn’t it yeah i thought so”
+// Output: “so thought i yeah it isn’t cool so is popcorn”
+
+// function reverse(string) {
+//   let split = string.split(" ");
+//   let index = split.length - 1;
+//   let reversed = [];
+//   while (index >= 0) {
+//     reversed.push(split[index]);
+//     index -= 1;
+//   }
+//   return reversed.join(" ");
+// }
+
+// console.log(reverse("popcorn is so cool isn’t it yeah i thought so"))

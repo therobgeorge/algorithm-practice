@@ -300,3 +300,26 @@
 
 # p difference("ABCDEFG", "ABCXEOG")
 # p difference("ABCDEFG", "ABCDEFG")
+
+
+
+
+# Reverse Word ****************************
+
+# Given a string of words, write a function that returns a new string that contains the words in reverse order.
+
+# Input: “popcorn is so cool isn’t it yeah i thought so”
+# Output: “so thought i yeah it isn’t cool so is popcorn”
+
+def reverse(string)
+  split = string.split(" ")
+  index = split.length - 1
+  reversed = []
+  while index >= 0 
+    reversed << split[index]
+    index -= 1
+  end
+  reversed.join(" ")
+end
+
+p reverse("popcorn is so cool isn’t it yeah i thought so")
