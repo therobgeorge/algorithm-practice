@@ -379,3 +379,35 @@
 
 
 # p fizzbuzz(100)
+
+
+
+# Fibonacci ***************
+
+# Write a function that gives the Nth number of the Fibonacci Sequence. The Fibonacci sequence begins with 0 and 1, and every number thereafter is the sum of the previous two numbers. So the sequence goes like this:
+
+# 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, and so on until infinity...
+          #  x
+          #     y
+          #        z
+
+
+
+# Input: 9
+# Output: 21 (as this is the 9th number of the Fibonacci Sequence)
+
+# def fibonacci(number)
+#   x = 0
+#   y = 1
+#   z = 0
+#   array = [0, 1]
+#   while array.length < number
+#     z = x + y
+#     x = y
+#     y = z
+#     array << z
+#   end
+#   array[number - 1]
+# end
+
+# p fibonacci(1)
