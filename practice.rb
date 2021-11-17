@@ -510,3 +510,31 @@
 # end
 
 # p collatz(12)
+
+
+
+#  Largest Palindrome **********************
+
+# A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
+# def palindrome(number1, number2)
+#   greatest = 0
+#   while number1 > 0
+#     if (number1 * number2).to_s.reverse == (number1 * number2).to_s && (number1 * number2) > greatest
+#       greatest = number1 * number2
+#     end
+#     number1 -= 1
+#   end
+#   number1 = 999
+#   while number2 > 0
+#     if (number1 * number2).to_s.reverse == (number1 * number2).to_s && (number1 * number2) > greatest
+#       greatest = number1 * number2
+#     end
+#     number2 -= 1
+#   end
+#   greatest
+# end
+
+# p palindrome(999, 999)
