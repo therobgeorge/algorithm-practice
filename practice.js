@@ -421,19 +421,41 @@
 // If your language provides a method in the standard library that does this look-up, pretend it doesn't exist and implement it yourself.
 
 
-function leap(year) {
-  if (year % 400 === 0) {
-    return true;
-  } else if (year % 100 === 0) {
-    return false;
-  } else if (year % 4 === 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function leap(year) {
+//   if (year % 400 === 0) {
+//     return true;
+//   } else if (year % 100 === 0) {
+//     return false;
+//   } else if (year % 4 === 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-console.log(leap(2000));
-console.log(leap(1900));
-console.log(leap(1996));
-console.log(leap(1997));
+// console.log(leap(2000));
+// console.log(leap(1900));
+// console.log(leap(1996));
+// console.log(leap(1997));
+
+
+// Multiples of 3 & 5 ***************************
+
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Find the sum of all the multiples of 3 or 5 below 1000.
+
+// function multiple(number) {
+//   let index = 1;
+//   let sum = 0;
+//   while (index < number) {
+//     if (index % 3 === 0 || index % 5 === 0) {
+//       sum = sum + index;
+//     }
+//     index += 1;
+//   }
+//   return sum;
+// }
+
+// console.log(multiple(10));
+// console.log(multiple(1000));
