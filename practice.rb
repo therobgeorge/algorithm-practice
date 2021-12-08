@@ -559,3 +559,33 @@
 # end
 
 # p mesh(["a", "b", "c"], ["d", "e", "f", "g"])
+
+
+# array mesh 2 *************
+
+# Given ONE array of strings, return a new array that contains every combination of each string with every other string in the array.
+
+# Input: ["a", "b", "c", "d"]
+# Output: ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
+
+
+# def mesh(array)
+#   index = 0
+#   current_index = 0
+#   output = []
+#   while current_index < array.length
+#     while index < array.length
+#       if index == current_index
+#         index +=1
+#       else
+#         output << array[current_index] + array[index]
+#         index += 1
+#       end
+#     end
+#     current_index += 1
+#     index = 0
+#   end
+#   output
+# end
+
+# p mesh(["a", "b", "c", "d"])

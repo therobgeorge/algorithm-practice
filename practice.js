@@ -544,3 +544,31 @@
 // }
 
 // console.log(mesh(["a", "b", "c"], ["d", "e", "f", "g"]));
+
+// array mesh 2 *************
+
+// Given ONE array of strings, return a new array that contains every combination of each string with every other string in the array.
+
+// Input: ["a", "b", "c", "d"]
+// Output: ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
+
+// function mesh(array) {
+//   let index = 1;
+//   let currentIndex = 0;
+//   let output = [];
+//   while (currentIndex < array.length) {
+//     while (index < array.length) {
+//       if (currentIndex === index) {
+//         index += 1;
+//       } else {
+//         output.push(array[currentIndex] + array[index]);
+//       }
+//       index += 1;
+//     }
+//     currentIndex += 1;
+//     index = 0;
+//   }
+//   return output;
+// }
+
+// console.log(mesh(["a", "b", "c", "d"]));
