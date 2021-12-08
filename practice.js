@@ -527,3 +527,20 @@
 // }
 
 // console.log(palindrome(999, 999));
+
+
+
+// Array Mesh **********************
+
+// Given two arrays of strings, return a new string that contains every combination of a string from the first array concatenated with a string from the second array.
+
+// Input: ["a", "b", "c"], ["d", "e", "f", "g"]
+// Output: ["ad", "ae", "af", "ag", "bd", "be", "bf", "bg", "cd", "ce", "cf", "cg"]
+
+// function mesh(array1, array2) {
+//   let output = [];
+//   array1.forEach(letter1 => array2.forEach(letter2 => output.push(letter1 + letter2)));
+//   return output;
+// }
+
+// console.log(mesh(["a", "b", "c"], ["d", "e", "f", "g"]));
