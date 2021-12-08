@@ -589,3 +589,35 @@
 # end
 
 # p mesh(["a", "b", "c", "d"])
+
+
+# Largest Product *************
+
+# Find the largest product of any two numbers within a given array.
+
+# Input: [5, -2, 1, -9, -7, 2, 6]
+# Output: 63 (-9 * -7)
+
+def product(array)
+  index = 1
+  current_index = 0
+  largest = array[0] * array[1]
+  while current_index <= array.length
+    while index <= array.length
+      if current_index == index 
+        index += 1
+      elsif
+        array[current_index].to_i * array[index].to_i > largest
+        largest = array[current_index] * array[index]
+        index += 1
+      else
+        index += 1
+      end
+    end
+    index = 0
+    current_index += 1
+  end
+  largest
+end
+
+p product([5, -2, 1, -9, -7, 2, 6])

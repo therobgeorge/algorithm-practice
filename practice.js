@@ -572,3 +572,33 @@
 // }
 
 // console.log(mesh(["a", "b", "c", "d"]));
+
+// Largest Product *************
+
+// Find the largest product of any two numbers within a given array.
+
+// Input: [5, -2, 1, -9, -7, 2, 6]
+// Output: 63 (-9 * -7)
+
+function product(array) {
+  let index = 1;
+  let currentIndex = 0;
+  let largest = array[currentIndex] * array[index];
+  while (currentIndex < array.length) {
+    while (index < array.length) {
+      if (currentIndex === index) {
+        index += 1;
+      } else if (array[currentIndex] * array[index] > largest) {
+        largest = array[currentIndex] * array[index];
+        index += 1;
+      } else {
+        index += 1;
+      }
+    }
+    currentIndex += 1;
+    index = 0;
+  }
+  return largest;
+}
+
+console.log(product([5, -2, 1, -9, -7, 2, 6]));
