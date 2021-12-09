@@ -693,34 +693,69 @@
 // [1, 2, 3, 97, 98, 99]
 // [90, 20, 70, 100, 30, 80, 10]
 
-function coolio(array) {
-  let index1 = 0
-  let index2 = array.length -1
-  while (index1 <= index2) {
-    if (index1 === index2) {
-      if (array[index1] === 100) {
-        return true;
+// function coolio(array) {
+//   let index1 = 0;
+//   let index2 = array.length - 1;
+//   while (index1 <= index2) {
+//     if (index1 === index2) {
+//       if (array[index1] === 100) {
+//         return true;
+//       } else {
+//         return false;
+//       }
+//     } else if (array[index1] + array[index2] === 100) {
+//       index1 += 1;
+//       index2 -= 1;
+//     } else {
+//       return false;
+//     }
+//     return true;
+//   }
+// }
+
+
+// console.log(coolio([1, 2, 3, 97, 98, 99]));
+// console.log(coolio([90, 20, 70, 100, 30, 80, 10]));
+// console.log(coolio([1, 2, 3, 97, 98, 6]));
+
+
+// Longest common prefix ****************
+
+// Write a function to find the longest common prefix string amongst an array of strings.
+
+// If there is no common prefix, return an empty string "".
+
+// Example 1:
+
+// Input: ["flower","flow","flight"]
+// Output: "fl"
+// Example 2:
+
+// Input: ["dog","racecar","car"]
+// Output: ""
+// Explanation: There is no common prefix among the input strings.
+// Note:
+
+// All given inputs are in lowercase letters a-z.
+
+function prefix(array) {
+  let arrayIndex = 0;
+  let stringIndex = 0;
+  let output = "";
+  while (stringIndex < 50) {
+    while (arrayIndex < array.length - 1) {
+      if (array[arrayIndex][stringIndex] === array[arrayIndex + 1][stringIndex]) {
+        arrayIndex += 1;
       } else {
-        return false;
+        return output;
       }
-    } else if (array[index1] + array[index2] === 100) {
-      index1 += 1;
-      index2 -= 1;
-    } else {
-      return false;
     }
-    return true;
+    output = output + array[0][stringIndex];
+    stringIndex += 1;
+    arrayIndex = 0;
   }
 }
 
-
-console.log(coolio([1, 2, 3, 97, 98, 99]));
-console.log(coolio([90, 20, 70, 100, 30, 80, 10]));
-console.log(coolio([1, 2, 3, 97, 98, 6]));
-
-
-
-
-
+console.log(prefix(["flower","flow","flight"]));
 
 
