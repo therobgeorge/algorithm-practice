@@ -672,28 +672,79 @@
 
 
 
-def merge(array1, array2)
+# def merge(array1, array2)
+#   index1 = 0
+#   index2 = 0
+#   output = []
+#   while index1 < array1.length && index2 < array2.length
+#     if array1[index1].to_i < array2[index2].to_i
+#       output << array1[index1]
+#       index1 += 1
+#     else
+#       output << array2[index2]
+#       index2 += 1
+#     end
+#   end
+#   while index2 < array2.length
+#     output << array2[index2]
+#     index2 += 1
+#   end
+#   while index1 < array1.length
+#     output << array1[index1]
+#     index1 += 1
+#   end
+#   output
+# end
+
+# p merge([1, 5, 8,], [6, 9])
+
+
+# 100 Coolio ******************
+
+# Given an array of numbers, return true if the array is a "100 Coolio Array", or false if it is not.
+
+# A "100 Coolio Array" meets the following criteria:
+
+# Its first and last numbers add up to 100,
+# Its second and second-to-last numbers add up to 100,
+# Its third and third-to-last numbers add up to 100,
+# and so on and so forth.
+
+# Here are examples of 100 Coolio Arrays:
+
+# [1, 2, 3, 97, 98, 99]
+# [90, 20, 70, 100, 30, 80, 10]
+
+
+def coolio(array)
   index1 = 0
-  index2 = 0
-  output = []
-  while index1 < array1.length && index2 < array2.length
-    if array1[index1].to_i < array2[index2].to_i
-      output << array1[index1]
+  index2 = array.length - 1
+  while index1 <= index2
+    if index1 == index2
+      if array[index1] == 100
+        return true
+      else
+        return false
+      end
+    end
+    if array[index1] + array[index2] == 100
       index1 += 1
+      index2 -= 1
     else
-      output << array2[index2]
-      index2 += 1
+      return false
     end
   end
-  while index2 < array2.length
-    output << array2[index2]
-    index2 += 1
-  end
-  while index1 < array1.length
-    output << array1[index1]
-    index1 += 1
-  end
-  output
+  true
 end
 
-p merge([1, 5, 8,], [6, 9])
+p coolio([1, 2, 3, 97, 98, 99])
+p coolio([90, 20, 70, 100, 30, 80, 10])
+p coolio([1, 2, 2, 5])
+
+
+
+
+
+
+
+
