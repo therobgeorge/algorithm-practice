@@ -636,25 +636,64 @@
 # Output: false (While 1, 2, 3, and 4 altogether add up to 10, we're seeking just one pair of numbers.)
 
 
-def sum(array)
-  current_index = 0
-  index = 1 
+# def sum(array)
+#   current_index = 0
+#   index = 1 
+#   output = []
+#   while current_index < array.length
+#     while index < array.length
+#       if current_index == index
+#         index += 1
+#       elsif array[current_index] + array[index] == 10
+#         return [array[current_index], array[index]]
+#       else
+#         index += 1
+#       end
+#     end
+#     current_index += 1
+#     index = 0 
+#   end
+#   false
+# end
+
+# p sum([2, 5, 3, 1, 0, 7, 11])
+# p sum([1, 2, 3, 4, 5])
+
+
+# merge sorted array*****
+
+# Given two sorted arrays, merge the second array into the first array while ensuring that the first array remains sorted. Do not use any built-in sort methods.
+
+# Input :
+# A : [1, 5, 8]
+# B : [6, 9]
+
+# Modified A : [1, 5, 6, 8, 9]
+
+
+
+def merge(array1, array2)
+  index1 = 0
+  index2 = 0
   output = []
-  while current_index < array.length
-    while index < array.length
-      if current_index == index
-        index += 1
-      elsif array[current_index] + array[index] == 10
-        return [array[current_index], array[index]]
-      else
-        index += 1
-      end
+  while index1 < array1.length && index2 < array2.length
+    if array1[index1].to_i < array2[index2].to_i
+      output << array1[index1]
+      index1 += 1
+    else
+      output << array2[index2]
+      index2 += 1
     end
-    current_index += 1
-    index = 0 
   end
-  false
+  while index2 < array2.length
+    output << array2[index2]
+    index2 += 1
+  end
+  while index1 < array1.length
+    output << array1[index1]
+    index1 += 1
+  end
+  output
 end
 
-p sum([2, 5, 3, 1, 0, 7, 11])
-p sum([1, 2, 3, 4, 5])
+p merge([1, 5, 8,], [6, 9])

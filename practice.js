@@ -640,8 +640,38 @@
 // console.log(sum([1, 2, 3, 4, 5]));
 
 
+// merge sorted array*****
 
+// Given two sorted arrays, merge the second array into the first array while ensuring that the first array remains sorted. Do not use any built-in sort methods.
 
+// Input :
+// A : [1, 5, 8]
+// B : [6, 9]
 
+// Modified A : [1, 5, 6, 8, 9]
 
+function merge(array1, array2) {
+  let index1 = 0;
+  let index2 = 0;
+  let output = [];
+  while (index1 < array1.length && index2 < array1.length) {
+    if (array1[index1] < array2[index2]) {
+      output.push(array1[index1]);
+      index1 += 1;
+    } else {
+      output.push(array2[index2]);
+      index2 += 1;
+    }
+  }
+  while (index2 < array2.length) {
+    output.push(array2[index2]);
+    index2 += 1;
+  }
+  while (index1 < array1.length) {
+    output.push(array1[index1]);
+    index1 += 1;
+  }
+  return output;
+}
 
+console.log(merge([1, 5, 8], [6, 9]));
