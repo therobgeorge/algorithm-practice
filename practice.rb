@@ -825,17 +825,43 @@
 # Explanation: "Dewey" occurs 6 times in the array, while "Truman" occurs 5 times.
 
 
-def votes(array)
-  votes = {}
-  array.each do |vote|
-    if votes[vote]
-      votes[vote] += 1
-    else
-      votes[vote] = 1
-    end
+# def votes(array)
+#   votes = {}
+#   array.each do |vote|
+#     if votes[vote]
+#       votes[vote] += 1
+#     else
+#       votes[vote] = 1
+#     end
+#   end
+#   votes
+# end
+
+
+# p votes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"])
+
+
+
+# Menu ***************
+
+# Given a hash, where the keys are strings representing food items, and the values are numbers representing the price of each food, return the amount someone would pay if they'd order one of each food from the entire menu.
+
+# Input: {"hot dog" => 2, "hamburger" => 3, "steak sandwich" => 5, "fries" => 1, "cole slaw" => 1, "soda" => 2}
+
+# Output: 14
+
+# Explanation: If someone would order one of everything on the menu, they'd pay a total of 14 (the sum of all the hash's values).
+
+def menu(hash)
+  total = 0
+  hash.each do |item, price|
+    total = total + price
+    item
   end
-  votes
+  total
 end
 
 
-p votes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"])
+p menu({"hot dog" => 2, "hamburger" => 3, "steak sandwich" => 5, "fries" => 1, "cole slaw" => 1, "soda" => 2})
+
+

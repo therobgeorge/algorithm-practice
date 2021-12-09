@@ -800,16 +800,40 @@
 
 // Explanation: "Dewey" occurs 6 times in the array, while "Truman" occurs 5 times.
 
-function votes(array) {
-  let votes = {};
-  array.forEach(vote => {
-    if (votes[vote]) {
-      votes[vote] += 1;
-    } else {
-      votes[vote] = 1;
-    }
-  });
-  return votes;
+// function votes(array) {
+//   let votes = {};
+//   array.forEach(vote => {
+//     if (votes[vote]) {
+//       votes[vote] += 1;
+//     } else {
+//       votes[vote] = 1;
+//     }
+//   });
+//   return votes;
+// }
+
+// console.log(votes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]));
+
+
+
+
+
+// Menu ***************
+
+// Given a hash, where the keys are strings representing food items, and the values are numbers representing the price of each food, return the amount someone would pay if they'd order one of each food from the entire menu.
+
+// Input: {"hot dog" => 2, "hamburger" => 3, "steak sandwich" => 5, "fries" => 1, "cole slaw" => 1, "soda" => 2}
+
+// Output: 14
+
+// Explanation: If someone would order one of everything on the menu, they'd pay a total of 14 (the sum of all the hash's values).
+
+function menu(object) {
+  let total = 0;
+  for (const [item, price] of Object.entries(object)) {
+    total = total + price;
+  }
+  return total;
 }
 
-console.log(votes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]));
+console.log(menu({"hot dog": 2, "hamburger": 3, "steak sandwich": 5, "fries": 1, "cole slaw": 1, "soda": 2}));
