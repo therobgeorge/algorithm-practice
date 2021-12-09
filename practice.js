@@ -766,25 +766,50 @@
 // Input: “peter piper picked a peck of pickled peppers”
 // Output: “p”
 
-function common(string) {
-  let letters = {};
-  let most = 0;
-  let common = "";
-  let split = string.replace(/ /g, "").split("");
-  split.forEach(letter => {
-    if (letters[letter]) {
-      letters[letter] += 1;
+// function common(string) {
+//   let letters = {};
+//   let most = 0;
+//   let common = "";
+//   let split = string.replace(/ /g, "").split("");
+//   split.forEach(letter => {
+//     if (letters[letter]) {
+//       letters[letter] += 1;
+//     } else {
+//       letters[letter] = 1;
+//     }
+//   });
+//   for (const [letter, count] of Object.entries(letters)) {
+//     if (count > most) {
+//       most = count;
+//       common = letter;
+//     }
+//   }
+//   return common;
+// }
+
+// console.log(common("peter piper picked a peck of pickled peppers"));
+
+
+// Votes *******************
+
+// Given an array of strings, return a hash that provides of a count of how many times each string occurs.
+
+// Input: ["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]
+
+// Output: {"Dewey" => 6, "Truman" => 5}
+
+// Explanation: "Dewey" occurs 6 times in the array, while "Truman" occurs 5 times.
+
+function votes(array) {
+  let votes = {};
+  array.forEach(vote => {
+    if (votes[vote]) {
+      votes[vote] += 1;
     } else {
-      letters[letter] = 1;
+      votes[vote] = 1;
     }
   });
-  for (const [letter, count] of Object.entries(letters)) {
-    if (count > most) {
-      most = count;
-      common = letter;
-    }
-  }
-  return common;
+  return votes;
 }
 
-console.log(common("peter piper picked a peck of pickled peppers"));
+console.log(votes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]));

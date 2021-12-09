@@ -789,31 +789,53 @@
 # Input: “peter piper picked a peck of pickled peppers”
 # Output: “p”
 
-def common(string)
-  letters = {}
-  common = ""
-  most = 0
-  string = string.chars
-  string.each do |letter|
-    if letters[letter]
-      letters[letter] += 1
+# def common(string)
+#   letters = {}
+#   common = ""
+#   most = 0
+#   string = string.chars
+#   string.each do |letter|
+#     if letters[letter]
+#       letters[letter] += 1
+#     else
+#       letters[letter] = 1
+#     end
+#   end
+#   letters.each do |letter, count|
+#     if count > most 
+#       most = count
+#       common = letter
+#     end
+#   end
+#   common
+# end
+
+
+# p common("peter piper picked a peck of pickled peppers")
+
+
+# Votes ************
+
+# Given an array of strings, return a hash that provides of a count of how many times each string occurs.
+
+# Input: ["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"]
+
+# Output: {"Dewey" => 6, "Truman" => 5}
+
+# Explanation: "Dewey" occurs 6 times in the array, while "Truman" occurs 5 times.
+
+
+def votes(array)
+  votes = {}
+  array.each do |vote|
+    if votes[vote]
+      votes[vote] += 1
     else
-      letters[letter] = 1
+      votes[vote] = 1
     end
   end
-  letters.each do |letter, count|
-    if count > most 
-      most = count
-      common = letter
-    end
-  end
-  common
+  votes
 end
 
 
-p common("peter piper picked a peck of pickled peppers")
-
-
-
-
-
+p votes(["Dewey", "Truman", "Dewey", "Dewey", "Truman", "Truman", "Dewey", "Truman", "Truman", "Dewey", "Dewey"])
