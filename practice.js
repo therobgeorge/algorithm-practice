@@ -738,24 +738,53 @@
 
 // All given inputs are in lowercase letters a-z.
 
-function prefix(array) {
-  let arrayIndex = 0;
-  let stringIndex = 0;
-  let output = "";
-  while (stringIndex < 50) {
-    while (arrayIndex < array.length - 1) {
-      if (array[arrayIndex][stringIndex] === array[arrayIndex + 1][stringIndex]) {
-        arrayIndex += 1;
-      } else {
-        return output;
-      }
+// function prefix(array) {
+//   let arrayIndex = 0;
+//   let stringIndex = 0;
+//   let output = "";
+//   while (stringIndex < 50) {
+//     while (arrayIndex < array.length - 1) {
+//       if (array[arrayIndex][stringIndex] === array[arrayIndex + 1][stringIndex]) {
+//         arrayIndex += 1;
+//       } else {
+//         return output;
+//       }
+//     }
+//     output = output + array[0][stringIndex];
+//     stringIndex += 1;
+//     arrayIndex = 0;
+//   }
+// }
+
+// console.log(prefix(["flower","flow","flight"]));
+
+
+// Most common letter ********
+
+// Given a string, find the most commonly occurring letter.
+
+// Input: “peter piper picked a peck of pickled peppers”
+// Output: “p”
+
+function common(string) {
+  let letters = {};
+  let most = 0;
+  let common = "";
+  let split = string.replace(/ /g, "").split("");
+  split.forEach(letter => {
+    if (letters[letter]) {
+      letters[letter] += 1;
+    } else {
+      letters[letter] = 1;
     }
-    output = output + array[0][stringIndex];
-    stringIndex += 1;
-    arrayIndex = 0;
+  });
+  for (const [letter, count] of Object.entries(letters)) {
+    if (count > most) {
+      most = count;
+      common = letter;
+    }
   }
+  return common;
 }
 
-console.log(prefix(["flower","flow","flight"]));
-
-
+console.log(common("peter piper picked a peck of pickled peppers"));

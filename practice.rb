@@ -760,30 +760,58 @@
 
 # All given inputs are in lowercase letters a-z.
 
-def prefix(array)
-  array_index = 0
-  string_index = 0
-  output = ""
-  while string_index < 50
-    while array_index < array.length - 1
-      if array[array_index][string_index] == array[array_index + 1][string_index]
-        array_index += 1
-      else
-        return output
-      end
+# def prefix(array)
+#   array_index = 0
+#   string_index = 0
+#   output = ""
+#   while string_index < 50
+#     while array_index < array.length - 1
+#       if array[array_index][string_index] == array[array_index + 1][string_index]
+#         array_index += 1
+#       else
+#         return output
+#       end
+#     end
+#     output = output + array[0][string_index].to_s
+#     string_index += 1 
+#     array_index = 0
+#   end
+#   output
+# end
+
+# p prefix(["flower","flow","flight"])
+# p prefix(["dog","racecar","car"])
+
+# Most common letter ********
+
+# Given a string, find the most commonly occurring letter.
+
+# Input: “peter piper picked a peck of pickled peppers”
+# Output: “p”
+
+def common(string)
+  letters = {}
+  common = ""
+  most = 0
+  string = string.chars
+  string.each do |letter|
+    if letters[letter]
+      letters[letter] += 1
+    else
+      letters[letter] = 1
     end
-    output = output + array[0][string_index].to_s
-    string_index += 1 
-    array_index = 0
   end
-  output
+  letters.each do |letter, count|
+    if count > most 
+      most = count
+      common = letter
+    end
+  end
+  common
 end
 
-p prefix(["flower","flow","flight"])
-p prefix(["dog","racecar","car"])
 
-
-
+p common("peter piper picked a peck of pickled peppers")
 
 
 
