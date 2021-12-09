@@ -598,26 +598,63 @@
 # Input: [5, -2, 1, -9, -7, 2, 6]
 # Output: 63 (-9 * -7)
 
-def product(array)
-  index = 1
+# def product(array)
+#   index = 1
+#   current_index = 0
+#   largest = array[0] * array[1]
+#   while current_index <= array.length
+#     while index <= array.length
+#       if current_index == index 
+#         index += 1
+#       elsif
+#         array[current_index].to_i * array[index].to_i > largest
+#         largest = array[current_index] * array[index]
+#         index += 1
+#       else
+#         index += 1
+#       end
+#     end
+#     index = 0
+#     current_index += 1
+#   end
+#   largest
+# end
+
+# p product([5, -2, 1, -9, -7, 2, 6])
+
+
+# Two Sum ***********
+
+# Given an array of numbers, return a new array containing just two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
+
+# Specifically use nested loops to solve this exercise even though there are other approaches as well.
+
+# Input: [2, 5, 3, 1, 0, 7, 11]
+# Output: [3, 7]
+
+# Input: [1, 2, 3, 4, 5]
+# Output: false (While 1, 2, 3, and 4 altogether add up to 10, we're seeking just one pair of numbers.)
+
+
+def sum(array)
   current_index = 0
-  largest = array[0] * array[1]
-  while current_index <= array.length
-    while index <= array.length
-      if current_index == index 
+  index = 1 
+  output = []
+  while current_index < array.length
+    while index < array.length
+      if current_index == index
         index += 1
-      elsif
-        array[current_index].to_i * array[index].to_i > largest
-        largest = array[current_index] * array[index]
-        index += 1
+      elsif array[current_index] + array[index] == 10
+        return [array[current_index], array[index]]
       else
         index += 1
       end
     end
-    index = 0
     current_index += 1
+    index = 0 
   end
-  largest
+  false
 end
 
-p product([5, -2, 1, -9, -7, 2, 6])
+p sum([2, 5, 3, 1, 0, 7, 11])
+p sum([1, 2, 3, 4, 5])

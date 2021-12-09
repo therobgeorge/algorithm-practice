@@ -580,25 +580,68 @@
 // Input: [5, -2, 1, -9, -7, 2, 6]
 // Output: 63 (-9 * -7)
 
-function product(array) {
-  let index = 1;
-  let currentIndex = 0;
-  let largest = array[currentIndex] * array[index];
-  while (currentIndex < array.length) {
-    while (index < array.length) {
-      if (currentIndex === index) {
-        index += 1;
-      } else if (array[currentIndex] * array[index] > largest) {
-        largest = array[currentIndex] * array[index];
-        index += 1;
-      } else {
-        index += 1;
-      }
-    }
-    currentIndex += 1;
-    index = 0;
-  }
-  return largest;
-}
+// function product(array) {
+//   let index = 1;
+//   let currentIndex = 0;
+//   let largest = array[currentIndex] * array[index];
+//   while (currentIndex < array.length) {
+//     while (index < array.length) {
+//       if (currentIndex === index) {
+//         index += 1;
+//       } else if (array[currentIndex] * array[index] > largest) {
+//         largest = array[currentIndex] * array[index];
+//         index += 1;
+//       } else {
+//         index += 1;
+//       }
+//     }
+//     currentIndex += 1;
+//     index = 0;
+//   }
+//   return largest;
+// }
 
-console.log(product([5, -2, 1, -9, -7, 2, 6]));
+// console.log(product([5, -2, 1, -9, -7, 2, 6]));
+
+
+
+// Two Sum ***********
+
+// Given an array of numbers, return a new array containing just two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
+
+// Specifically use nested loops to solve this exercise even though there are other approaches as well.
+
+// Input: [2, 5, 3, 1, 0, 7, 11]
+// Output: [3, 7]
+
+// Input: [1, 2, 3, 4, 5]
+// Output: false (While 1, 2, 3, and 4 altogether add up to 10, we're seeking just one pair of numbers.)
+
+// function sum(array) {
+//   let currentIndex = 0;
+//   let index = 1;
+//   while (currentIndex < array.length) {
+//     while (index < array.length) {
+//       if (index === currentIndex) {
+//         index += 1;
+//       } else if (parseInt(array[currentIndex]) + parseInt(array[index]) === 10) {
+//         return [array[currentIndex], array[index]];
+//       } else {
+//         index += 1;
+//       }
+//     }
+//     currentIndex += 1;
+//     index = 0;
+//   }
+//   return false;
+// }
+
+// console.log(sum([2, 5, 3, 1, 0, 7, 11]));
+// console.log(sum([1, 2, 3, 4, 5]));
+
+
+
+
+
+
+
