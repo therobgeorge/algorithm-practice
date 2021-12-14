@@ -1034,13 +1034,31 @@
 # Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
 # Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
 
-def flatten(hash)
-  array = []
+# def flatten(hash)
+#   array = []
+#   hash.each do |letter, number|
+#     array << letter
+#     array << number
+#   end
+#   array
+# end
+
+# p flatten({"a" => 1, "b" => 2, "c" => 3, "d" => 4})
+
+
+# Flip ***********
+
+# Given a hash, create a new hash that has the keys and values switched.
+
+# Input: {"a" => 1, "b" => 2, "c" => 3}
+# Output: {1 => "a", 2 => "b", 3 => "c"}
+
+def flip(hash)
+  flipped = {}
   hash.each do |letter, number|
-    array << letter
-    array << number
+    flipped[number] = letter
   end
-  array
+  flipped
 end
 
-p flatten({"a" => 1, "b" => 2, "c" => 3, "d" => 4})
+p flip({"a" => 1, "b" => 2, "c" => 3})

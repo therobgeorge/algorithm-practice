@@ -1031,13 +1031,30 @@
 // Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
 // Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
 
-function flatten(hash) {
-  let array = [];
-  for (const [key, value] of Object.entries(hash)) {
-    array.push(key);
-    array.push(value);
+// function flatten(hash) {
+//   let array = [];
+//   for (const [key, value] of Object.entries(hash)) {
+//     array.push(key);
+//     array.push(value);
+//   }
+//   return array;
+// }
+
+// console.log(flatten({"a": 1, "b": 2, "c": 3, "d": 4}));
+
+// Flip ***********
+
+// Given a hash, create a new hash that has the keys and values switched.
+
+// Input: {"a" => 1, "b" => 2, "c" => 3}
+// Output: {1 => "a", 2 => "b", 3 => "c"}
+
+function flip(hash) {
+  let flipped = {};
+  for (const [letter, number] of Object.entries(hash)) {
+    flipped[number] = letter;
   }
-  return array;
+  return flipped;
 }
 
-console.log(flatten({"a": 1, "b": 2, "c": 3, "d": 4}));
+console.log(flip({"a": 1, "b": 2, "c": 3}));
