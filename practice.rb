@@ -881,19 +881,52 @@
 # ]
 
 
-def popular(array)
-  output = []
-  array.each do |post|
-    if post[:likes] >= 1000
-      output << post
-    end
+# def popular(array)
+#   output = []
+#   array.each do |post|
+#     if post[:likes] >= 1000
+#       output << post
+#     end
+#   end
+#   output
+# end
+
+# p popular([
+#   {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
+#   {title: 'i never knew how cool i was until now', submitted_by: "Lyndon Johnson", likes: 3},
+#   {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
+#   {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
+#   ])
+
+
+# RNA Transcription ***************
+
+# Given a DNA strand, return its RNA complement (per RNA transcription).
+
+# Both DNA and RNA strands are a sequence of nucleotides. Here we're representing the sequences with single-letter characters (e.g. a sample strand may look like: "AGCA".)
+
+# Given a string representing a DNA strand, provide its transcribed RNA strand, according to the following pattern:
+
+# G becomes C
+# C becomes G
+# T becomes A
+# A becomes U
+
+# So based on all this, here's a sample input/output:
+
+# Input: 'ACGTGGTCTTAA'
+# Output: 'UGCACCAGAAUU'
+
+
+def rna(string)
+  rna = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
+  dna = string.chars
+  convert = []
+  dna.each do |letter|
+    convert << rna[letter]
   end
-  output
+  convert.join
 end
 
-p popular([
-  {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
-  {title: 'i never knew how cool i was until now', submitted_by: "Lyndon Johnson", likes: 3},
-  {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
-  {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
-  ])
+
+p rna("ACGTGGTCTTAA")
