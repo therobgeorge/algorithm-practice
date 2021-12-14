@@ -892,16 +892,58 @@
 // Input: 'ACGTGGTCTTAA'
 // Output: 'UGCACCAGAAUU'
 
-function rna(string) {
-  let rna = {G: "C", C: "G", T: "A", A: "U"};
-  let dna = string.split("");
-  let convert = [];
-  let index = 0;
-  while (index < dna.length) {
-    convert.push(rna[dna[index]]);
-    index += 1;
-  }
-  return convert.join("");
+// function rna(string) {
+//   let rna = {G: "C", C: "G", T: "A", A: "U"};
+//   let dna = string.split("");
+//   let convert = [];
+//   let index = 0;
+//   while (index < dna.length) {
+//     convert.push(rna[dna[index]]);
+//     index += 1;
+//   }
+//   return convert.join("");
+// }
+
+// console.log(rna("ACGTGGTCTTAA"));
+
+
+
+// Complete Data *****************
+
+// Given an array of social media posts and a hash of users, return a list of posts (as an array of hashes) that replaces the submitted_by id number as the person's actual name.
+
+// For example, given this array of posts (note that the submitted_by is an id number):
+
+// [
+// {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+// {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+// {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+// {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
+// ]
+
+// And this hash of users (the key is the id number and the value is the user's real name):
+
+// users = {403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q."}
+
+// Return the array of posts as follows:
+
+// [
+// {title: 'Me Eating Pizza', submitted_by: "Joelle P.", likes: 1549},
+// {title: 'i never knew how cool i was until now', submitted_by: "Lyndon Johnson", likes: 3},
+// {title: 'best selfie evar!!!', submitted_by: "Patti Q.", likes: 1092},
+// {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
+// ]
+
+function users(posts, users) {
+  let submittedBy = "submitted_by";
+  posts.forEach(post => {
+    post[submittedBy] = users[post[submittedBy]];
+  });
+  return posts;
 }
 
-console.log(rna("ACGTGGTCTTAA"));
+console.log(users([
+  {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+  {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+  {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+  {title: 'Mondays are the worst', submitted_by: 403, likes: 644}], {403: "Aunty Em", 231: "Joelle P.", 989: "Lyndon Johnson", 111: "Patti Q."}));
