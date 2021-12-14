@@ -1150,24 +1150,76 @@
 #   ]
 #   }
 
-def author(array)
-  sorted = {}
-  array.each do |book|
-    if sorted[book[:author]]
-      sorted[book[:author]] << {title: book[:title], year: book[:year]}
-    else
-      sorted[book[:author]] = [title: book[:title], year: book[:year]]
+# def author(array)
+#   sorted = {}
+#   array.each do |book|
+#     if sorted[book[:author]]
+#       sorted[book[:author]] << {title: book[:title], year: book[:year]}
+#     else
+#       sorted[book[:author]] = [title: book[:title], year: book[:year]]
+#     end
+#   end
+#   sorted
+# end
+
+# p author([
+#   {title: "The Lord of the Rings", author: "J. R. R. Tolkien", year: 1954 },
+#   {title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 },
+#   {title: "1984", author: "George Orwell", year: 1949 },
+#   {title: "Go Set a Watchman", author: "Harper Lee", year: 2015 },
+#   {title: "The Hobbit", author: "J. R. R. Tolkien", year: 1937 },
+#   {title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
+#   {title: "The Two Towers", author: "J. R. R. Tolkien", year: 1954 }
+#   ])
+
+
+# ETL 3*****************
+
+# Given an array of Youtube videos, for example:
+
+# [
+# {title: 'How to Make Wood', author_id: 4, views: 6},
+# {title: 'How to Seem Perfect', author_id: 4, views: 111},
+# {title: 'Review of the New "Unbreakable Mug"', author_id: 2, views: 202},
+# {title: 'Why Pigs Stink', author_id: 1, views: 12}
+# ]
+
+# and an array of authors, for example:
+
+# [
+# {id: 1, first_name: 'Jazz', last_name: 'Callahan'},
+# {id: 2, first_name: 'Ichabod', last_name: 'Loadbearer'},
+# {id: 3, first_name: 'Saron', last_name: 'Kim'},
+# {id: 4, first_name: 'Teena', last_name: 'Burgess'},
+# ]
+
+# Return a new array of videos in the following format, and only include videos that have at least 100 views:
+
+# [
+# {title: 'How to Seem Perfect', views: 111, author_name: 'Teena Burgess' }
+# {title: 'Review of the New "Unbreakable Mug"', views: 202, author_name: 'Ichabod Loadbearer' },
+# ]
+
+def youtube(videos, authors)
+  views = []
+  videos.each do |video|
+    authors.each do |author|
+      if video[:author_id] == author[:id] && video[:views] >= 100
+        views << {title: video[:title], views: video[:views], author_name: "#{author[:first_name]} #{author[:last_name]}"}
+      end
     end
   end
-  sorted
+  views
 end
 
-p author([
-  {title: "The Lord of the Rings", author: "J. R. R. Tolkien", year: 1954 },
-  {title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 },
-  {title: "1984", author: "George Orwell", year: 1949 },
-  {title: "Go Set a Watchman", author: "Harper Lee", year: 2015 },
-  {title: "The Hobbit", author: "J. R. R. Tolkien", year: 1937 },
-  {title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
-  {title: "The Two Towers", author: "J. R. R. Tolkien", year: 1954 }
+p youtube([
+  {title: 'How to Make Wood', author_id: 4, views: 6},
+  {title: 'How to Seem Perfect', author_id: 4, views: 111},
+  {title: 'Review of the New "Unbreakable Mug"', author_id: 2, views: 202},
+  {title: 'Why Pigs Stink', author_id: 1, views: 12}
+  ], [
+  {id: 1, first_name: 'Jazz', last_name: 'Callahan'},
+  {id: 2, first_name: 'Ichabod', last_name: 'Loadbearer'},
+  {id: 3, first_name: 'Saron', last_name: 'Kim'},
+  {id: 4, first_name: 'Teena', last_name: 'Burgess'},
   ])
