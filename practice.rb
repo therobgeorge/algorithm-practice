@@ -959,17 +959,41 @@
 # {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
 # ]
 
-def users(posts, users)
-  posts.each do |post|
-    post[:submitted_by] = users[post[:submitted_by]]
-  end
-  posts
-end
+# def users(posts, users)
+#   posts.each do |post|
+#     post[:submitted_by] = users[post[:submitted_by]]
+#   end
+#   posts
+# end
 
-p users([
-  {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
-  {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
-  {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
-  {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
-  ], 
-  {403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q."})
+# p users([
+#   {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+#   {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+#   {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+#   {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
+#   ], 
+#   {403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q."})
+
+# anagram *********
+
+# Given two strings, return true if they are anagrams of each other, and false if they are not. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
+# Do not use any built-in sort methods.
+
+# Input: “silent”, “listen”
+# Output: true
+
+# Input: “frog”, “bear”
+# Output: false
+
+# def anagram(string1, string2)
+#   output = string1.chars - string2.chars
+#   if output.length == 0
+#     true
+#   else 
+#     false
+#   end
+# end
+
+# p anagram("silent", "listen")
+# p anagram("frog", "bear")

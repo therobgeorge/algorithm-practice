@@ -934,16 +934,60 @@
 // {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
 // ]
 
-function users(posts, users) {
-  let submittedBy = "submitted_by";
-  posts.forEach(post => {
-    post[submittedBy] = users[post[submittedBy]];
-  });
-  return posts;
-}
+// function users(posts, users) {
+//   let submittedBy = "submitted_by";
+//   posts.forEach(post => {
+//     post[submittedBy] = users[post[submittedBy]];
+//   });
+//   return posts;
+// }
 
-console.log(users([
-  {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
-  {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
-  {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
-  {title: 'Mondays are the worst', submitted_by: 403, likes: 644}], {403: "Aunty Em", 231: "Joelle P.", 989: "Lyndon Johnson", 111: "Patti Q."}));
+// console.log(users([
+//   {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+//   {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+//   {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+//   {title: 'Mondays are the worst', submitted_by: 403, likes: 644}], {403: "Aunty Em", 231: "Joelle P.", 989: "Lyndon Johnson", 111: "Patti Q."}));
+
+
+
+// anagram *********
+
+// Given two strings, return true if they are anagrams of each other, and false if they are not. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+
+// Do not use any built-in sort methods.
+
+// Input: “silent”, “listen”
+// Output: true
+
+// Input: “frog”, “bear”
+// Output: false
+
+// function anagram(string1, string2) {
+//   let array1 = string1.split("");
+//   let array2 = string2.split("");
+//   let word1 = {};
+//   let word2 = {};
+//   array1.forEach(letter => {
+//     if (word1[letter]) {
+//       word1[letter] += 1;
+//     } else {
+//       word1[letter] = 1;
+//     }
+//   });
+//   array2.forEach(letter => {
+//     if (word2[letter]) {
+//       word2[letter] += 1;
+//     } else {
+//       word2[letter] = 1;
+//     }
+//   });
+//   for (const [letter, count] of Object.entries(word1)) {
+//     if (word2[letter] !== count) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(anagram("silent", "listen"));
+// console.log(anagram("frog", "bear"));
