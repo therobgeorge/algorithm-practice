@@ -991,3 +991,34 @@
 
 // console.log(anagram("silent", "listen"));
 // console.log(anagram("frog", "bear"));
+
+
+
+// ETL 1 *****************
+
+// You are given two parameters, an array and a number. Return a hash whose keys are each of the values from the array parameter, and whose values are the number parameter.
+
+// Input:
+
+// First argument: ["a", "e", "i", "o", "u"]
+// Second argument: 1
+
+// Output:
+
+// {
+// 'a' => 1,
+// 'e' => 1,
+// 'i' => 1,
+// 'o' => 1,
+// 'u' => 1
+// }
+
+function hash(array, value) {
+  let hash = {};
+  array.forEach(letter => {
+    hash[letter] = value;
+  });
+  return hash;
+}
+
+console.log(hash(["a", "e", "i", "o", "u"], 1));
