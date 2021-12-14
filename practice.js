@@ -1013,12 +1013,31 @@
 // 'u' => 1
 // }
 
-function hash(array, value) {
-  let hash = {};
-  array.forEach(letter => {
-    hash[letter] = value;
-  });
-  return hash;
+// function hash(array, value) {
+//   let hash = {};
+//   array.forEach(letter => {
+//     hash[letter] = value;
+//   });
+//   return hash;
+// }
+
+// console.log(hash(["a", "e", "i", "o", "u"], 1));
+
+
+// Flatten ************
+
+// Given a hash, return a flat array containing all the hash’s keys and values.
+
+// Input: {“a” => 1, “b” => 2, “c” => 3, “d” => 4}
+// Output: [“a”, 1, “b”, 2, “c”, 3, “d”, 4]
+
+function flatten(hash) {
+  let array = [];
+  for (const [key, value] of Object.entries(hash)) {
+    array.push(key);
+    array.push(value);
+  }
+  return array;
 }
 
-console.log(hash(["a", "e", "i", "o", "u"], 1));
+console.log(flatten({"a": 1, "b": 2, "c": 3, "d": 4}));
