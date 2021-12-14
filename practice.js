@@ -1091,28 +1091,84 @@
 // {title: 'Mondays are the worst', submitted_by: "Aunty Em", likes: 644}
 // ]
 
-function user(posts, users) {
-  let submittedBy = "submitted_by";
-  let userId = "user_id";
-  let name = "name";
-  posts.forEach(post => {
-    users.forEach(user => {
-      if (post[submittedBy] === user[userId]) {
-        post[submittedBy] = user[name];
-      }
-    });
+// function user(posts, users) {
+//   let submittedBy = "submitted_by";
+//   let userId = "user_id";
+//   let name = "name";
+//   posts.forEach(post => {
+//     users.forEach(user => {
+//       if (post[submittedBy] === user[userId]) {
+//         post[submittedBy] = user[name];
+//       }
+//     });
+//   });
+//   return posts;
+// }
+
+
+// console.log(user([
+//   {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
+//   {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
+//   {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
+//   {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
+// ], [
+//   {user_id: 403, name: "Aunty Em"},
+//   {user_id: 231, name: "Joelle P."},
+//   {user_id: 989, name: "Lyndon Johnson"},
+//   {user_id: 111, name: "Patti Q."}]));
+
+
+// Authors **********
+
+// [
+//   {title: "The Lord of the Rings", author: "J. R. R. Tolkien", year: 1954 },
+//   {title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 },
+//   {title: "1984", author: "George Orwell", year: 1949 },
+//   {title: "Go Set a Watchman", author: "Harper Lee", year: 2015 },
+//   {title: "The Hobbit", author: "J. R. R. Tolkien", year: 1937 },
+//   {title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
+//   {title: "The Two Towers", author: "J. R. R. Tolkien", year: 1954 }
+//   ]
+  
+//   return the data in this new author-centric format:
+  
+//   { "J. R. R. Tolkien" => [
+//   {title: "The Lord of the Rings", year: 1954 },
+//   {title: "The Hobbit", year: 1937 },
+//   {title: "The Two Towers", year: 1954 }
+//   ],
+//   "Harper Lee" => [
+//   {title: "To Kill a Mockingbird", year: 1960 },
+//   {title: "Go Set a Watchman", year: 2015 }
+//   ],
+//   "George Orwell" => [
+//   {title: "1984", year: 1949 }
+//   ],
+//   "F. Scott Fitzgerald" => [
+//   {title: "The Great Gatsby", year: 1925 }
+//   ]
+//   }
+
+function authors(array) {
+  let sorted = [];
+  let title = "title";
+  let author = "author";
+  let year = "year";
+  array.forEach(book => {
+    if (sorted[book[author]]) {
+      sorted[book[author]].push({title: book[title], year: book[year]});
+    } else {
+      sorted[book[author]] = [{title: book[title], year: book[year]}];
+    }
   });
-  return posts;
+  return sorted;
 }
 
-
-console.log(user([
-  {title: 'Me Eating Pizza', submitted_by: 231, likes: 1549},
-  {title: 'i never knew how cool i was until now', submitted_by: 989, likes: 3},
-  {title: 'best selfie evar!!!', submitted_by: 111, likes: 1092},
-  {title: 'Mondays are the worst', submitted_by: 403, likes: 644}
-], [
-  {user_id: 403, name: "Aunty Em"},
-  {user_id: 231, name: "Joelle P."},
-  {user_id: 989, name: "Lyndon Johnson"},
-  {user_id: 111, name: "Patti Q."}]));
+console.log(authors([
+  {title: "The Lord of the Rings", author: "J. R. R. Tolkien", year: 1954 },
+  {title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 },
+  {title: "1984", author: "George Orwell", year: 1949 },
+  {title: "Go Set a Watchman", author: "Harper Lee", year: 2015 },
+  {title: "The Hobbit", author: "J. R. R. Tolkien", year: 1937 },
+  {title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
+  {title: "The Two Towers", author: "J. R. R. Tolkien", year: 1954 }]));
